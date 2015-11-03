@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js'></script>
+    <script src='http://ghiden.github.io/angucomplete-alt/js/libs/angucomplete-alt.js'></script>
+    <script src='https://cdn.rawgit.com/Luegg/angularjs-scroll-glue/master/src/scrollglue.js'></script>
+    <script src='lawg.js'></script>
+  </head>
+  <body>
+    <div ng-app='lawg' ng-controller='LawgRootController'>
+      <div>
+        <input type='string' ng-model='lawg_key'>
+      </div>
+      <div>
+        <div angucomplete-alt id='files'
+          placeholder='Search files'
+          pause='100'
+          selected-object='lawg_selection'
+          remote-url='/lookup?'
+          minlength='1'
+          remote-url-request-formatter='lawg_formatter'
+          title-field='filename'
+          input-class='form-control form-control-small'>
+        </div>
+      </div>
+      <div scroll-glue style='white-space: pre; height : 500px; overflow-y : scroll'>
+        {{ lawg_content }}
+      </div>
+    </div>
+  </body>
+</html>
