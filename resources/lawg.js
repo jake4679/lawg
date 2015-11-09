@@ -11,7 +11,7 @@ app.controller('LawgRootController', ['$http', '$scope', '$timeout', function($h
       if(selection) {
         $timeout.cancel($scope.tout_promise);
         $scope.lawg_content = '';
-        $scope.lawgd_offset = -1;
+        $scope.lawgd_offset = 0;
         $scope.tout_promise = $timeout($scope.lawg_update, 1000, true, selection.title);
       }
     };
@@ -28,6 +28,6 @@ app.controller('LawgRootController', ['$http', '$scope', '$timeout', function($h
     };
 
     $scope.lawg_key = 'bef3h27sh27s472g36dgjmdh';
-    $scope.lawgd_offset = -1;
-    $scope.lawg_content = '';
+    $scope.lawgd_offset = 0;
+    $scope.lawg_content = 'Output will be shown here';
 }]);
