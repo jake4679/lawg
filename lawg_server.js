@@ -104,7 +104,8 @@ dispatcher.onGet('/retrieve', check_security(function(request, response) {
     return;
   }
 
-  var bSize = 1024;
+  //var bSize = 1024;
+  var bSize = 1048576;
 
   var payload = new Buffer(bSize);
 
