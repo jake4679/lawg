@@ -8,9 +8,8 @@ var bunyan = require('bunyan');
 var util = require('util');
 
 var log_files = [
-  { filename : '/var/log/system.log' },
-  { filename : '/var/log/wifi.log' }, 
-  { filename :'/Users/jake/test.log'}];
+  { filename : '/Users/jake/tmp/a.log' },
+  { filename : '/Users/jake/tmp/b.log' }];
 var API_KEY = 'bef3h27sh27s472g36dgjmdh';
 
 var logger = bunyan.createLogger({name : 'lawg'});
@@ -133,6 +132,9 @@ log_files.forEach(function(log_file) {
 } catch(e) {
   logger.error(e);
 }
+
+dispatcher.setStatic('');
+dispatcher.setStaticDirname('resources');
 
 dispatcher.beforeFilter(/\//, function(request, response, chain) {
   logger.info(request.method + ' : ' + request.url);
