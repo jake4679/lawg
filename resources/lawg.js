@@ -23,7 +23,7 @@ app.controller('LawgRootController', ['$http', '$scope', '$timeout', function($h
         $scope.lawg_content += results.data;
         $scope.lawgd_offset = results.offset;
 
-        $timeout($scope.lawg_update, 1000, true, filename);
+        $scope.tout_promise = $timeout($scope.lawg_update, 1000, true, filename);
       });
     };
 
